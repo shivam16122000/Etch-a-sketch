@@ -1,0 +1,25 @@
+.grid {
+  border: solid 1px black;
+}
+.fix {
+  background-color: black;
+}
+#clear {
+  position: relative;
+  left: 600px;
+  top: 300px;
+
+  font-size: 40px;
+  background-color: aqua;
+  border-radius: 20%;
+  box-shadow: 0px 0px 20px 20px grey;
+}
+body {
+  background-color: lightgray;
+}
+h1 {
+  position: relative;
+  left: 600px;
+  bottom: 430px;
+  color: darkblue;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>shivam tiwari</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        
+        <button id="clear">Clear</button>
+        <div id="container" class="container">
+
+        </div>
+        <h1>Made by Shivam Tiwari</h1>
+        <script>
+            var numberCells=16;
+            var promptNumberCells;
+            clear = document.querySelector('#clear');
+            container = document.querySelector('#container');
+            for(let i=1;i<=(numberCells*numberCells);i++){
+                gridBox = document.createElement('button');
+                gridBox.setAttribute("class","grid");
+                container.appendChild(gridBox);
+                
+
+            }
+            document.querySelectorAll(".grid").forEach((array)=>{
+                array.addEventListener('mouseover',()=>{
+                    array.classList.add("fix");
+                })
+            });
+            container.setAttribute("style",`width: 500px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: repeat(${numberCells}, 1fr);
+  grid-template-rows: repeat(${numberCells}, 1fr);
+  
+  
+  position:relative;
+  
+  grid-gap: 0px;
+  border: solid 3px green;`)
+
+            clear.addEventListener('click',()=>{
+                document.querySelectorAll(".fix").forEach((array)=>{
+                
+                array.classList.remove("fix");
+            
+        });
+       
+        
+
+                while (true){
+                 promptNumberCells = prompt("How many squares per side? (Maximum: 100)");
+                 numberCells = parseInt(promptNumberCells, 10);
+    if (isNaN(numberCells)) {
+        window.alert("You must enter a positive integer. (Maximum: 100)");
+        
+    }
+    else if (numberCells <= 0) {
+        window.alert("You must enter a positive integer. (Maximum: 100)");
+        
+    }
+    else if (numberCells > 100) {
+        window.alert("You must enter a positive integer. (Maximum: 100)");
+        
+    }else{
+        break;
+    }
+                }
+                document.querySelectorAll(".grid").forEach((array)=>{
+                
+                array.remove();
+            
+        });
+        for(let i=1;i<=(numberCells*numberCells);i++){
+                gridBox = document.createElement('button');
+                gridBox.setAttribute("class","grid");
+                container.appendChild(gridBox);
+                
+
+            }
+            document.querySelectorAll(".grid").forEach((array)=>{
+                array.addEventListener('mouseover',()=>{
+                    array.classList.add("fix");
+                })
+            });   
+        
+
+                container.setAttribute("style",`width: 500px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: repeat(${numberCells}, 1fr);
+  grid-template-rows: repeat(${numberCells}, 1fr);
+  grid-gap: 0px;
+  
+
+  position:relative;
+  
+  border: solid 3px green;`);
+
+               
+
+            })
+
+                
+             
+            
+
+        </script>
+    </body>
+</html>
